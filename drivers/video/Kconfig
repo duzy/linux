@@ -3,7 +3,7 @@
 #
 
 menu "Graphics support"
-	depends on HAS_IOMEM
+	depends on HAS_IOMEM || UML
 
 config HAVE_FB_ATMEL
 	bool

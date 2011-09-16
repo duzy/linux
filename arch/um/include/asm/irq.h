@@ -16,8 +16,9 @@
 #define TELNETD_IRQ 		12
 #define XTERM_IRQ 		13
 #define RANDOM_IRQ 		14
+#define FB_IRQ                  15
 
-#define LAST_IRQ RANDOM_IRQ
+#define LAST_IRQ FB_IRQ
 #define NR_IRQS (LAST_IRQ + 1)
 
 #endif

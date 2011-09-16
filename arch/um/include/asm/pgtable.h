@@ -366,4 +366,7 @@ do {						\
 	__flush_tlb_one((vaddr));		\
 } while (0)
 
+#define io_remap_pfn_range(vma, vaddr, pfn, size, prot)	\
+	remap_pfn_range(vma, vaddr, pfn, size, prot)
+
 #endif

@@ -22,6 +22,15 @@ config LD_SCRIPT_DYN
 	default y
 	depends on !LD_SCRIPT_STATIC
 
+
+source "drivers/input/Kconfig"
+source "drivers/char/Kconfig"
+source "drivers/video/Kconfig"
+
+config UML_FB
+	bool "UML Framebuffer driver basend SHMFB"
+	depends on FB && !MODE_TT && !STATIC_LINK
+
 source "fs/Kconfig.binfmt"
 
 config HOSTFS

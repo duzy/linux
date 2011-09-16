@@ -10,6 +10,7 @@
 #include <linux/seq_file.h>
 #include <linux/string.h>
 #include <linux/utsname.h>
+#include <linux/console.h>
 #include <asm/pgtable.h>
 #include <asm/processor.h>
 #include <asm/setup.h>
@@ -377,6 +378,9 @@ void __init setup_arch(char **cmdline_p)
 	strlcpy(boot_command_line, command_line, COMMAND_LINE_SIZE);
 	*cmdline_p = command_line;
 	setup_hostinfo(host_info, sizeof host_info);
+#if defined(CONFIG_DUMMY_CONSOLE)
+        conswitchp = &dummy_con;
+#endif
 }
 
 void __init check_bugs(void)
